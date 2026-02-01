@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Pookie Wookie 💖</title>
+<style>
+body{
+  margin:0;
+  height:100vh;
+  background:linear-gradient(135deg,#ffb6c1,#ffd1dc);
+  font-family:Arial,sans-serif;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+}
+.card{
+  background:#fff;
+  padding:30px;
+  border-radius:25px;
+  text-align:center;
+  width:330px;
+  box-shadow:0 15px 40px rgba(0,0,0,.2);
+  position:relative;
+}
+button{
+  padding:12px 22px;
+  border:none;
+  border-radius:30px;
+  font-size:16px;
+  cursor:pointer;
+}
+#yes{background:hotpink;color:white;}
+#no{background:#eee;position:absolute;}
+.heart{
+  position:fixed;
+  font-size:20px;
+  animation:float 4s linear infinite;
+}
+@keyframes float{
+  0%{transform:translateY(0);opacity:1;}
+  100%{transform:translateY(-100vh);opacity:0;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h2>
+    oyee meri pookie wookie dishu pishu 🤭😋🩷🌸🎀💗<br>
+    ready to make this Valentine unforgettable? 💘
+  </h2>
+  <br>
+  <button id="yes" onclick="yesClicked()">Yes 💖</button>
+  <button id="no" onmouseover="moveNo()">No 🙈</button>
+  <p style="font-size:12px;">“No” thoda shy hai 😏</p>
+</div>
+
+<script>
+function moveNo(){
+  const b=document.getElementById("no");
+  b.style.left=Math.random()*window.innerWidth+"px";
+  b.style.top=Math.random()*window.innerHeight+"px";
+}
+
+function yesClicked(){
+  document.body.innerHTML=`
+  <h1 style="text-align:center;">
+    YAYYYY!!! 🎉🩷<br><br>
+    You just made me the happiest 🥹💗<br><br>
+
+    <img src="photo.jpg" width="260" style="border-radius:20px;"><br><br>
+
+    <img src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" width="220"><br><br>
+
+    <a href="https://wa.me/918120850133" target="_blank">
+      <button style="background:hotpink;color:white;">
+        Text me on WhatsApp 💬
+      </button>
+    </a>
+  </h1>`;
+}
+
+setInterval(()=>{
+  const h=document.createElement("div");
+  h.className="heart";
+  h.innerHTML="💖";
+  h.style.left=Math.random()*100+"vw";
+  h.style.top="100vh";
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),4000);
+},300);
+</script>
+
+</body>
+</html>
