@@ -1,2 +1,0 @@
-# Invitation-
-Khol ise jaldi 😋
